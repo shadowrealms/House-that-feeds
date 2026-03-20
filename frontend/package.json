@@ -1,20 +1,14 @@
-import React from 'react';
-
-function App() {
-  return (
-    <div style={{ padding: 40, fontFamily: 'Arial', background: '#111', color: 'white' }}>
-      <h1 style={{ color: 'gold' }}>House of Mercy</h1>
-      <p>A place where everyone is welcome.</p>
-
-      <h2>Our Mission</h2>
-      <p>Feed the hungry. Help those in need.</p>
-
-      <h2>Donate</h2>
-      <button style={{ padding: 10, background: 'gold', border: 'none' }}>
-        Donate Now
-      </button>
-    </div>
-  );
+{
+  "name": "house-of-mercy",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  }
 }
-
-export default App;
