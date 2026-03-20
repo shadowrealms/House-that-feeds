@@ -1,0 +1,323 @@
+import React, { useState } from 'react';
+
+const merchandise = [
+  {
+    id: 1,
+    name: 'Hoodie',
+    price: '$49.99',
+    description: 'A cozy hoodie perfect for any season.',
+  },
+  {
+    id: 2,
+    name: 'Dress',
+    price: '$59.99',
+    description: 'A stylish dress for all occasions.',
+  },
+  {
+    id: 3,
+    name: 'Jacket',
+    price: '$89.99',
+    description: 'A warm jacket for chilly days.',
+  },
+  {
+    id: 4,
+    name: 'Belt Buckle',
+    price: '$19.99',
+    description: 'A unique belt buckle to accessorize your outfit.',
+  },
+];
+
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-black text-white scroll-smooth">
+      {/* Navbar */}
+      <header className="sticky top-0 z-50 border-b border-yellow-500/20 bg-black/90 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+          <div>
+            <h1 className="text-2xl font-extrabold tracking-wide text-yellow-400">
+              House of Mercy
+            </h1>
+            <p className="text-xs uppercase tracking-[0.25em] text-gray-400">
+              GE &amp; LE Studios
+            </p>
+          </div>
+
+          <nav className="hidden items-center gap-6 md:flex">
+            <a href="#story" className="transition hover:text-yellow-400">Story</a>
+            <a href="#characters" className="transition hover:text-yellow-400">Characters</a>
+            <a href="#mission" className="transition hover:text-yellow-400">Mission</a>
+            <a href="#portfolio" className="transition hover:text-yellow-400">Portfolio</a>
+            <a href="#merch" className="transition hover:text-yellow-400">Merchandise</a>
+            <a href="#donate" className="transition hover:text-yellow-400">Donate</a>
+          </nav>
+
+          <button
+            className="rounded-lg border border-yellow-500/30 px-3 py-2 text-sm md:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            Menu
+          </button>
+        </div>
+
+        {menuOpen && (
+          <div className="border-t border-yellow-500/20 bg-gray-950 md:hidden">
+            <div className="flex flex-col px-5 py-4">
+              <a href="#story" className="py-2" onClick={() => setMenuOpen(false)}>Story</a>
+              <a href="#characters" className="py-2" onClick={() => setMenuOpen(false)}>Characters</a>
+              <a href="#mission" className="py-2" onClick={() => setMenuOpen(false)}>Mission</a>
+              <a href="#portfolio" className="py-2" onClick={() => setMenuOpen(false)}>Portfolio</a>
+              <a href="#merch" className="py-2" onClick={() => setMenuOpen(false)}>Merchandise</a>
+              <a href="#donate" className="py-2" onClick={() => setMenuOpen(false)}>Donate</a>
+            </div>
+          </div>
+        )}
+      </header>
+
+      {/* Hero */}
+      <section
+        className="relative flex min-h-screen items-center justify-center overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/path-to-hero-image.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black" />
+
+        <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-yellow-400">
+            A Living Mission of Mercy
+          </p>
+
+          <h2 className="mb-6 text-4xl font-extrabold leading-tight md:text-6xl xl:text-7xl">
+            Feeding the Hungry.
+            <br />
+            Clothing the Vulnerable.
+            <br />
+            Turning Story Into Action.
+          </h2>
+
+          <p className="mx-auto mb-10 max-w-3xl text-base leading-8 text-gray-200 md:text-xl">
+            House of Mercy is more than a brand. It is a calling shaped through struggle,
+            faith, compassion, and the belief that creativity can become provision for
+            people who need warmth, food, dignity, and hope.
+          </p>
+
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href="#donate"
+              className="rounded-2xl bg-yellow-500 px-7 py-4 font-bold text-black transition hover:bg-yellow-400"
+            >
+              Support the Mission
+            </a>
+            <a
+              href="#story"
+              className="rounded-2xl border border-yellow-500 px-7 py-4 font-bold text-yellow-400 transition hover:bg-yellow-500 hover:text-black"
+            >
+              Read the Story
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Story */}
+      <section id="story" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-yellow-400">
+              The Beginning
+            </p>
+            <h3 className="mb-6 text-3xl font-bold md:text-5xl">
+              The Story Behind House of Mercy
+            </h3>
+            <p className="mb-5 text-lg leading-8 text-gray-300">
+              This vision was born through hardship, long nights, sacrifice, and a heart
+              that never stopped caring for others. It began with a working man carrying
+              more weight than most could see, yet still believing that one day mercy
+              could become something real and lasting.
+            </p>
+            <p className="text-lg leading-8 text-gray-300">
+              House of Mercy stands at the meeting place between story and service. It is
+              a place where creativity is not only seen, but sent into the world to feed,
+              clothe, restore, and remind people that they matter.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-yellow-500/20 bg-gray-950 p-8 shadow-2xl shadow-yellow-500/5">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-yellow-400">
+              Vision
+            </p>
+            <h4 className="mb-4 text-2xl font-bold md:text-3xl">
+              From Failure to Finished Franchise
+            </h4>
+            <p className="leading-8 text-gray-300">
+              Through GE &amp; LE Studios, stories, merchandise, films, and creative works
+              become part of a greater system — one designed to create real-world impact
+              for the hungry, the lonely, and the overlooked.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Characters */}
+      <section id="characters" className="bg-gray-950 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.25em] text-yellow-400">
+            Heart of the Story
+          </p>
+          <h3 className="mb-14 text-center text-3xl font-bold md:text-5xl">
+            Character Introductions
+          </h3>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="rounded-3xl border border-yellow-500/20 bg-gradient-to-b from-gray-900 to-gray-950 p-8 shadow-xl">
+              <h4 className="mb-4 text-2xl font-bold text-yellow-400">Mercy</h4>
+              <p className="leading-8 text-gray-300">
+                Mercy represents compassion in motion — the quiet strength that sees pain,
+                moves toward it, and answers it with love.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-yellow-500/20 bg-gradient-to-b from-gray-900 to-gray-950 p-8 shadow-xl">
+              <h4 className="mb-4 text-2xl font-bold text-yellow-400">Grace</h4>
+              <p className="leading-8 text-gray-300">
+                Grace carries restoration, tenderness, and the truth that even wounded
+                lives can rise again in beauty and purpose.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-yellow-500/20 bg-gradient-to-b from-gray-900 to-gray-950 p-8 shadow-xl">
+              <h4 className="mb-4 text-2xl font-bold text-yellow-400">Mika</h4>
+              <p className="leading-8 text-gray-300">
+                Mika reflects courage, loyalty, and the resilience to keep walking through
+                darkness until light breaks through.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section id="mission" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="max-w-4xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-yellow-400">
+            The Mission
+          </p>
+          <h3 className="mb-6 text-3xl font-bold md:text-5xl">
+            Creativity That Feeds Compassion
+          </h3>
+          <p className="text-lg leading-9 text-gray-300">
+            Our mission is to build a living system where storytelling, merchandise,
+            donations, and community support all work together to feed the hungry, clothe
+            those in need, and restore dignity to people who feel invisible. This is not
+            charity as performance. This is mercy put into motion.
+          </p>
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section id="portfolio" className="bg-gray-950 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-yellow-400">
+            Creative Engine
+          </p>
+          <h3 className="mb-6 text-3xl font-bold md:text-5xl">
+            GE &amp; LE Studios Portfolio
+          </h3>
+          <p className="max-w-4xl text-lg leading-9 text-gray-300">
+            GE &amp; LE Studios develops stories, films, and products with a purpose beyond
+            entertainment. Every creation is part of a wider vision to inspire people and
+            help build a practical foundation for mercy in the real world.
+          </p>
+        </div>
+      </section>
+
+      {/* Merchandise */}
+      <section id="merch" className="mx-auto max-w-7xl px-6 py-24">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-yellow-400">
+          Merchandise
+        </p>
+        <h3 className="mb-12 text-3xl font-bold md:text-5xl">
+          Offerings That Support the Mission
+        </h3>
+
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+          {merchandise.map((item) => (
+            <div
+              key={item.id}
+              className="rounded-3xl border border-yellow-500/20 bg-gray-950 p-6 shadow-xl transition hover:-translate-y-1 hover:border-yellow-400/40"
+            >
+              <div className="mb-4 h-40 rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900" />
+              <h4 className="mb-2 text-2xl font-bold">{item.name}</h4>
+              <p className="mb-4 min-h-[96px] leading-7 text-gray-300">
+                {item.description}
+              </p>
+              <p className="text-lg font-bold text-yellow-400">{item.price}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Donation */}
+      <section id="donate" className="relative overflow-hidden bg-blue-700 py-24 text-white">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-600" />
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-100">
+            Support the Mission
+          </p>
+          <h3 className="mb-5 text-3xl font-bold md:text-5xl">
+            Help Turn Compassion Into Action
+          </h3>
+          <p className="mb-8 text-lg leading-8 text-blue-100">
+            Every contribution helps provide food, clothing, dignity, and hope. What is
+            given here is meant to become something real in the lives of people who need
+            mercy most.
+          </p>
+
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <button className="rounded-2xl bg-white px-8 py-4 font-bold text-blue-700 transition hover:bg-gray-100">
+              Donate Now
+            </button>
+            <a
+              href="#mission"
+              className="rounded-2xl border border-white px-8 py-4 font-bold text-white transition hover:bg-white hover:text-blue-700"
+            >
+              See the Vision
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-yellow-500/10 bg-black py-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-center text-sm text-gray-400 md:flex-row">
+          <p>© House of Mercy — Built with purpose through GE &amp; LE Studios</p>
+          <a
+            href="https://www.linkedin.com/company/forgebrothers"
+            className="font-semibold text-yellow-400 hover:text-yellow-300"
+          >
+            Forge Brothers on LinkedIn
+          </a>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
+{
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ]
+}
+module.exports = {
+  plugins: {
+    autoprefixer: {},
+    cssnano: {},
+  },
+};
